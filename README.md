@@ -14,6 +14,7 @@ Este projeto é uma recriação da interface de um e-commerce fictício de café
 - Utilizar **CSS Flexbox** para organizar as colunas de produtos de maneira responsiva, sem a utilização de **CSS Grid**.
 - Desenvolver habilidades em criação de layouts flexíveis e responsivos, utilizando **media queries** para adaptação a diferentes tamanhos de tela.
 - Melhorar o entendimento de como criar layouts limpos e eficientes utilizando apenas **HTML** e **CSS**.
+- O layout **NÃO** tem como objetivo seguir os padrões UX/UI, porém, ao longo do tempo posso ir melhorando o visual.
 
 ## Como Rodar o Projeto
 

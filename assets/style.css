@@ -155,16 +155,17 @@ footer p.foot-title {
   color: rgb(212, 212, 212);
 }
 
+.foot-logo img {
+  width: 150px;
+  margin-top: 20px;
+}
+
 hr {
   border: 1px solid white;
   margin: 20px auto;
   width: 50%;
 }
 
-.foot-logo img {
-  width: 150px;
-  margin-top: 20px;
-}
 
 @media (max-width: 768px) {
   .cards {
@@ -192,7 +193,7 @@ hr {
     opacity: 0;
     visibility: hidden;
     transform: translateY(-500px);
-    transition: transform 1.5s ease;
+    transition: transform 1s ease;
   }
 
   #menu:checked ~ .list-menu {
@@ -207,7 +208,7 @@ hr {
   }
 
   .menu-btn span {
-    transition: transform 0.3s ease;
+    transition: transform 0.2s ease;
   }
 
   #menu:checked ~ .menu-btn span:nth-child(1) {
@@ -221,6 +222,32 @@ hr {
   #menu:checked ~ .menu-btn span:nth-child(3) {
     transform: rotate(-45deg) translate(6px, -6px);
   }
+}
+
+.form {
+  min-height: 250px;
+  border-radius: 8px;
+  margin: 20px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #bdbdbd3d;
+  gap: 10px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group input {
+  padding: 5px 10px;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  margin-top: 5px;  
 }
 
 @media (min-width: 769px) and (max-width: 991px) {

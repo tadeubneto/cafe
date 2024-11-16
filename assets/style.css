@@ -188,21 +188,21 @@ main {
   color: green;
 }
 
-.btn-sub {
+#btnSub {
   background-color: #1d755b;
   margin-top: 10px;
 }
 
-.btn-res {
+#btnRes {
   background-color: #e63946;
   margin-top: 5px;
   margin-bottom: 10px;
 }
 
-.btn-sub:hover {
+#btnSub:hover {
   opacity: 0.8;
 }
-.btn-res:hover {
+#btnRes:hover {
   opacity: 0.8;
 }
 

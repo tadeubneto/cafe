@@ -70,10 +70,27 @@ function validacaoCampo() {
 
   // campo telefone
   const telefoneRegex = /(\((\d{2})\)\s?)?(\d{4,5})[-]?(\d{4})/gm
+
+  aplicarMascaraTelefone(telefone)
+  
   if (!telefoneRegex.test(telefone.value)) {
     document.getElementById('telErro').textContent = 'Telefone inválido'
   } else {
     document.getElementById('telErro').textContent = ''
+  }
+
+  function aplicarMascaraTelefone (input) {
+    let value = input.value
+
+    value = value.replace(/\D/g, '')
+    if(value.length <= 10) {
+      value.value.replace((/^(\d{2})(\d{4})(\d{0,4})/, '($1) $2-$3'))
+    }else{
+      value = value.replace(/^(\d{2})(\d{5})(\d{0,4})/, '($1) $2-$3');
+    }
+    value = value.substring(0, 15);
+    input.value = value;
+
   }
 
   // campo data de nascimento

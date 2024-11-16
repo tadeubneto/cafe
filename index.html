@@ -21,26 +21,26 @@
                     <a href="">Comprar</a>
                     <a href="">Contato</a>
                 </div>
-
+                
                 <input type="checkbox" id="menu">
                 <label for="menu" class="menu-btn">
                     <span></span>
                     <span></span>
                     <span></span>
                 </label>
-
+                
                 <ul class="list-menu">
                     <li>Home</li>
                     <li>Produtos</li>
                     <li>Contato</li>
                 </ul>          
-
+                
             </nav>
         </div>
     </header>
-
-
-
+    
+    
+    
     <main>
         <h1>Academy Café</h1>
         <!-- <div class="cards">
@@ -63,7 +63,7 @@
                     <button class="add-to-cart">Comprar</button>
                 </div>
             </div>
-
+            
             <div class="card">
                 <img src="./assets/images/cafe3.jpg" alt="Produto" class="card-img">
                 <div class="card-content">
@@ -82,7 +82,7 @@
                     <button class="add-to-cart">Comprar</button>
                 </div>
             </div>
-
+            
             <div class="card">
                 <img src="./assets/images/cafe2.jpg" alt="Produto" class="card-img">
                 <div class="card-content">
@@ -92,7 +92,7 @@
                     <button class="add-to-cart">Comprar</button>
                 </div>
             </div>
-
+            
             <div class="card">
                 <img src="./assets/images/cafe3.jpg" alt="Produto" class="card-img">
                 <div class="card-content">
@@ -102,7 +102,7 @@
                     <button class="add-to-cart">Comprar</button>
                 </div>
             </div>
-
+            
             <div class="card">
                 <img src="./assets/images/cafe1.jpg" alt="Produto" class="card-img">
                 <div class="card-content">
@@ -112,7 +112,7 @@
                     <button class="add-to-cart">Comprar</button>
                 </div>
             </div>
-
+            
             <div class="card">
                 <img src="./assets/images/cafe2.jpg" alt="Produto" class="card-img">
                 <div class="card-content">
@@ -122,7 +122,7 @@
                     <button class="add-to-cart">Comprar</button>
                 </div>
             </div>
-
+            
             <div class="card">
                 <img src="./assets/images/cafe3.jpg" alt="Produto" class="card-img">
                 <div class="card-content">
@@ -132,19 +132,39 @@
                     <button class="add-to-cart">Comprar</button>
                 </div>
             </div> -->
-
+            
             <section class="sec-forms" >
-                <form class="form">
+                <form id="form">
                     <p>Cadastro</p>
                     <div class="form-group">
-                        <label for="name">Nome:</label>
-                        <input type="text" id="name" placeholder="Seu nome:">
+                        <label for="name">Nome completo:</label>
+                        <input type="text" id="name" placeholder="Seu nome completo:">
                         <span class="error" id="nameErro"></span>
                     </div>
                     <div class="form-group">
                         <label for="email">E-mail:</label>
                         <input type="email" id="email" placeholder="Seu e-mail:">
                         <span class="error" id="emailErro"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="cpf">CPF:</label>
+                        <input type="text" id="cpf" placeholder="Seu CPF:">
+                        <span class="error" id="cpfErro"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="tel">Telefone:</label>
+                        <input type="text" id="tel" placeholder="Seu telefone:">
+                        <span class="error" id="telErro"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Data de nascimento:</label>
+                        <input type="text" id="date" placeholder="Sua data de nascimento:">
+                        <span class="error" id="dateErro"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="end">Endereço:</label>
+                        <input type="text" id="end" placeholder="Seu endereço:">
+                        <span class="error" id="endErro"></span>
                     </div>
                     <div class="form-group">
                         <label for="name">Senha:</label>
@@ -156,44 +176,45 @@
                         <input type="password" id="confirm-password" placeholder="Confirme sua senha:">
                         <span class="error" id="confirm-passwordErro"></span>
                     </div>
-                    <button type="submit">Cadastrar</button>
-                    <button type="reset">Limpar</button>
-
-
+                    <button type="submit" class="btn-sub">Cadastrar</button>
+                    <button type="reset" class="btn-res">Limpar</button>
+                    
+                    
                 </form>
             </section>
             
-    </main>
-
-
-    <footer>
-        <div class="foot-link">
-            <p class="foot-title">Links</p>
-            <ul>
-                <li>Home</li>
-                <li>Produtos</li>
-                <li>Contato</li>
-            </ul>
-        </div>
-        <hr>
-        <div class="foot-inst">
-            <p class="foot-title">Institucional</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente provident quidem iure molestiae ex. Nobis quaerat cum non adipisci ipsa vero sunt! Doloribus quis ipsam voluptas numquam, illum vel quod.</p>
-        </div>
-        <hr>
-        <div class="foot-cont">
-            <p class="foot-title">Contatos</p>
-            <ul>
-                <li>Email</li>
-                <li>Telefone</li>
-                <li>Endereço</li>
-            </ul>
-        </div>
-        <div class="foot-logo">
-            <img src="./assets/images/logo.png" alt="">
-        </div>
-    </footer>
-
-</body>
-
+        </main>
+        
+        
+        <footer>
+            <div class="foot-link">
+                <p class="foot-title">Links</p>
+                <ul>
+                    <li>Home</li>
+                    <li>Produtos</li>
+                    <li>Contato</li>
+                </ul>
+            </div>
+            <hr>
+            <div class="foot-inst">
+                <p class="foot-title">Institucional</p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente provident quidem iure molestiae ex. Nobis quaerat cum non adipisci ipsa vero sunt! Doloribus quis ipsam voluptas numquam, illum vel quod.</p>
+            </div>
+            <hr>
+            <div class="foot-cont">
+                <p class="foot-title">Contatos</p>
+                <ul>
+                    <li>Email</li>
+                    <li>Telefone</li>
+                    <li>Endereço</li>
+                </ul>
+            </div>
+            <div class="foot-logo">
+                <img src="./assets/images/logo.png" alt="">
+            </div>
+        </footer>
+        
+        <script src="./assets/script.js"></script>
+    </body>
+    
 </html>

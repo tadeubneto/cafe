@@ -70,6 +70,7 @@ main h1 {
 main {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 30px;
 }
 
 .cards {
@@ -141,6 +142,70 @@ main {
   background-color: #1d755b;
 }
 
+#form {
+  min-height: 250px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #bdbdbd3d;
+  gap: 10px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group input {
+  padding: 5px 10px;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  margin-top: 5px;
+}
+
+#form button {
+  padding: 10px 20px;
+  min-width: 200px;
+  border-radius: 8px;
+  border: 1px solid #18212b;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: opacity 0.2s;
+}
+
+.error {
+  color: red;
+  font-size: 0.9em;
+  margin-top: 5px;
+}
+.success {
+  color: green;
+}
+
+.btn-sub {
+  background-color: #1d755b;
+  margin-top: 10px;
+}
+
+.btn-res {
+  background-color: #e63946;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.btn-sub:hover {
+  opacity: 0.8;
+}
+.btn-res:hover {
+  opacity: 0.8;
+}
+
 footer {
   background-color: #18212b;
   text-align: center;
@@ -165,7 +230,6 @@ hr {
   margin: 20px auto;
   width: 50%;
 }
-
 
 @media (max-width: 768px) {
   .cards {
@@ -204,7 +268,6 @@ hr {
 
   .menu-btn {
     display: block;
-    
   }
 
   .menu-btn span {
@@ -222,32 +285,6 @@ hr {
   #menu:checked ~ .menu-btn span:nth-child(3) {
     transform: rotate(-45deg) translate(6px, -6px);
   }
-}
-
-.form {
-  min-height: 250px;
-  border-radius: 8px;
-  margin: 20px;
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #bdbdbd3d;
-  gap: 10px;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-}
-
-.form-group input {
-  padding: 5px 10px;
-  outline: none;
-  border: none;
-  border-radius: 8px;
-  margin-top: 5px;  
 }
 
 @media (min-width: 769px) and (max-width: 991px) {

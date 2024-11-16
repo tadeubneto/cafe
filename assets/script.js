@@ -10,7 +10,6 @@ const confirmaSenha = document.getElementById('confirm-password')
 const botaoEnviar = document.getElementById('btnSub')
 const botaoLimpar = document.getElementById('btnRes')
 
-
 usuario.addEventListener('input', validacaoCampo)
 email.addEventListener('input', validacaoCampo)
 cpf.addEventListener('input', validacaoCampo)
@@ -19,20 +18,19 @@ dataDeNascimento.addEventListener('input', validacaoCampo)
 endereco.addEventListener('input', validacaoCampo)
 senha.addEventListener('input', validacaoCampo)
 confirmaSenha.addEventListener('input', validacaoCampo)
-botaoEnviar.addEventListener('click', (e) => {
-  
-  e.preventDefault();
+botaoLimpar.addEventListener('click', limparPreferencias)
+// botaoEnviar.addEventListener('click', e => {
+//   e.preventDefault()
 
-  console.log('Nome:', usuario.value);
-  console.log('E-mail:', email.value);
-  console.log('CPF:', cpf.value);
-  console.log('Telefone:', telefone.value);
-  console.log('Data de Nascimento:', dataDeNascimento.value);
-  console.log('Endereço:', endereco.value);
-  console.log('Senha:', senha.value);
-  console.log('Confirmar Senha:', confirmaSenha.value);
-
-})
+//   console.log('Nome:', usuario.value)
+//   console.log('E-mail:', email.value)
+//   console.log('CPF:', cpf.value)
+//   console.log('Telefone:', telefone.value)
+//   console.log('Data de Nascimento:', dataDeNascimento.value)
+//   console.log('Endereço:', endereco.value)
+//   console.log('Senha:', senha.value)
+//   console.log('Confirmar Senha:', confirmaSenha.value)
+// })
 
 function validacaoCampo() {
   // campo usuario
@@ -87,31 +85,31 @@ function validacaoCampo() {
       'Data de nascimento inválida. Insira no formato dd/mm/aaaa'
   } else {
     document.getElementById('dateErro').textContent = ''
-    
+
     const [dia, mes, ano] = dataDeNascimento.value.split(/[\/\-.]/)
     const dataDeNascimentoObj = new Date(ano, mes - 1, dia)
     const idade = calcularIdade(dataDeNascimentoObj)
     const idadeMin = 18
     const idadeMax = 150
-    
+
     if (idade < idadeMin || idade > idadeMax) {
       document.getElementById('dateErro').textContent =
-      'A idade deve ser maior que 18 e menor que 150.'
+        'A idade deve ser maior que 18 e menor que 150.'
       return false
     } else {
       document.getElementById('dateErro').textContent = ''
     }
-    
+
     function calcularIdade(dataNascimento) {
       const dataAtual = new Date()
       let idade = dataAtual.getFullYear() - dataNascimento.getFullYear()
       const mesAtual = dataAtual.getMonth() + 1
       const diaAtual = dataAtual.getDate()
-      
+
       if (
         mesAtual < dataNascimento.getMonth() + 1 ||
         (mesAtual === dataNascimento.getMonth() + 1 &&
-        diaAtual < dataNascimento.getDate())
+          diaAtual < dataNascimento.getDate())
       ) {
         idade--
       }
@@ -139,12 +137,49 @@ function validacaoCampo() {
     document.getElementById('passwordErro').textContent = ''
   }
 
-  if(confirmaSenha.value !== senha.value){
-    document.getElementById('confirm-passwordErro').textContent = 'Sua senha deve ser igual a primeira'
-  }else {
+  if (confirmaSenha.value !== senha.value) {
+    document.getElementById('confirm-passwordErro').textContent =
+      'Sua senha deve ser igual a primeira'
+  } else {
     document.getElementById('confirm-passwordErro').textContent = ''
   }
-  
 }
+
+const formPreferencia  = document.getElementById('form')
+
+formPreferencia.addEventListener('load', () => {
+  const preferencias = JSON.parse(localStorage.getItem('preferenciasUsuario'))
+  if(preferencias) {
+    usuario.value = preferencias.name || '';
+    email.value = preferencias.email || '';
+    cpf.value = preferencias.cpf || '';
+    telefone.value = preferencias.telefone || '';
+    dataDeNascimento.value = preferencias.dataDeNascimento || '';
+    endereco.value = preferencias.endereco || '';
+    
+}
+})
+
+  formPreferencia.addEventListener('submit', (e) => {
+    e.preventDefault()
+
+    const preferencias = {
+      name: usuario.value,
+      email: email.value,
+      cpf: cpf.value,
+      telefone: telefone.value,
+      nascimento: dataDeNascimento.value,
+      endereco: endereco.value
+    };
+  
+    localStorage.setItem('preferenciasUsuario', JSON.stringify(preferencias))
+    alert('Salvo!')
+  });
+  
+  function limparPreferencias() {
+    localStorage.removeItem('preferenciasUsuario')
+    form.reset()
+    alert('Excluído!')
+  }
 
 

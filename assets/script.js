@@ -5,6 +5,11 @@ const cpf = document.getElementById('cpf')
 const telefone = document.getElementById('tel')
 const dataDeNascimento = document.getElementById('date')
 const endereco = document.getElementById('end')
+const senha = document.getElementById('password')
+const confirmaSenha = document.getElementById('confirm-password')
+const botaoEnviar = document.getElementById('btnSub')
+const botaoLimpar = document.getElementById('btnRes')
+
 
 usuario.addEventListener('input', validacaoCampo)
 email.addEventListener('input', validacaoCampo)
@@ -12,6 +17,22 @@ cpf.addEventListener('input', validacaoCampo)
 telefone.addEventListener('input', validacaoCampo)
 dataDeNascimento.addEventListener('input', validacaoCampo)
 endereco.addEventListener('input', validacaoCampo)
+senha.addEventListener('input', validacaoCampo)
+confirmaSenha.addEventListener('input', validacaoCampo)
+botaoEnviar.addEventListener('click', (e) => {
+  
+  e.preventDefault();
+
+  console.log('Nome:', usuario.value);
+  console.log('E-mail:', email.value);
+  console.log('CPF:', cpf.value);
+  console.log('Telefone:', telefone.value);
+  console.log('Data de Nascimento:', dataDeNascimento.value);
+  console.log('Endereço:', endereco.value);
+  console.log('Senha:', senha.value);
+  console.log('Confirmar Senha:', confirmaSenha.value);
+
+})
 
 function validacaoCampo() {
   // campo usuario
@@ -50,8 +71,8 @@ function validacaoCampo() {
   }
 
   // campo telefone
-  const telRegex = /(\((\d{2})\)\s?)?(\d{4,5})[-]?(\d{4})/gm
-  if (!telRegex.test(telefone.value)) {
+  const telefoneRegex = /(\((\d{2})\)\s?)?(\d{4,5})[-]?(\d{4})/gm
+  if (!telefoneRegex.test(telefone.value)) {
     document.getElementById('telErro').textContent = 'Telefone inválido'
   } else {
     document.getElementById('telErro').textContent = ''
@@ -60,40 +81,42 @@ function validacaoCampo() {
   // campo data de nascimento
   const dataRegex =
     /^((?:(?=29[\/\-.]0?2[\/\-.](?:[1-9]\d)?(?:[02468][048]|[13579][26])(?!\d))29)|(?:(?=31[\/\-.](?!11)0?[13578]|1[02])31)|(?:(?=\d?\d[\/\-.]\d?\d[\/\-.])(?!29[\/\-.]0?2)(?!31)(?:[12][0-9]|30|0?[1-9])))[\/\-.](0?[1-9]|1[0-2])[\/\-.]((?:[1-9]\d)?\d{2})$/
+
   if (!dataRegex.test(dataDeNascimento.value)) {
     document.getElementById('dateErro').textContent =
       'Data de nascimento inválida. Insira no formato dd/mm/aaaa'
   } else {
     document.getElementById('dateErro').textContent = ''
-  }
-
-  const [dia, mes, ano] = dataDeNascimento.value.split(/[\/\-.]/)
-  const dataDeNascimentoObj = new Date(ano, mes - 1, dia)
-  const idade = calcularIdade(dataDeNascimentoObj)
-  const idadeMin = 18
-  const idadeMax = 150
-
-  if (idade < idadeMin || idade > idadeMax) {
-    document.getElementById('dateErro').textContent =
+    
+    const [dia, mes, ano] = dataDeNascimento.value.split(/[\/\-.]/)
+    const dataDeNascimentoObj = new Date(ano, mes - 1, dia)
+    const idade = calcularIdade(dataDeNascimentoObj)
+    const idadeMin = 18
+    const idadeMax = 150
+    
+    if (idade < idadeMin || idade > idadeMax) {
+      document.getElementById('dateErro').textContent =
       'A idade deve ser maior que 18 e menor que 150.'
-    return false
-  } else {
-    document.getElementById('dateErro').textContent = ''
-  }
-
-  function calcularIdade(dataNascimento) {
-    const dataAtual = new Date()
-    let idade = dataAtual.getFullYear() - dataNascimento.getFullYear()
-    const mesAtual = dataAtual.getMonth() + 1
-    const diaAtual = dataAtual.getDate()
-
-    if (
-      mesAtual < dataNascimento.getMonth() + 1 ||
-      (mesAtual === dataNascimento.getMonth() + 1 && diaAtual < dataNascimento.getDate())
-    ) {
-      idade--
+      return false
+    } else {
+      document.getElementById('dateErro').textContent = ''
     }
-    return idade
+    
+    function calcularIdade(dataNascimento) {
+      const dataAtual = new Date()
+      let idade = dataAtual.getFullYear() - dataNascimento.getFullYear()
+      const mesAtual = dataAtual.getMonth() + 1
+      const diaAtual = dataAtual.getDate()
+      
+      if (
+        mesAtual < dataNascimento.getMonth() + 1 ||
+        (mesAtual === dataNascimento.getMonth() + 1 &&
+        diaAtual < dataNascimento.getDate())
+      ) {
+        idade--
+      }
+      return idade
+    }
   }
 
   // campo endereço
@@ -103,4 +126,25 @@ function validacaoCampo() {
   } else {
     document.getElementById('endErro').textContent = ''
   }
+
+  // campo senha
+
+  const passwordRegex =
+    /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%&*()+\-.,;?\^.,;?><:{}\[\]])[\w!@#$%&*()+\-.,;?\^.,;?><:{}\[\]]{6,}$/
+
+  if (!passwordRegex.test(senha.value)) {
+    document.getElementById('passwordErro').textContent =
+      'Sua senha deve conter: Letra MAIÚSCULA, número, símbolo, ter no mínimo 6 caracteres'
+  } else {
+    document.getElementById('passwordErro').textContent = ''
+  }
+
+  if(confirmaSenha.value !== senha.value){
+    document.getElementById('confirm-passwordErro').textContent = 'Sua senha deve ser igual a primeira'
+  }else {
+    document.getElementById('confirm-passwordErro').textContent = ''
+  }
+  
 }
+
+

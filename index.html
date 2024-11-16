@@ -143,7 +143,7 @@
                     </div>
                     <div class="form-group">
                         <label for="email">E-mail:</label>
-                        <input type="email" id="email" placeholder="Seu e-mail:">
+                        <input type="email" id="email" placeholder="Seu e-mail:" autocomplete="username">
                         <span class="error" id="emailErro"></span>
                     </div>
                     <div class="form-group">
@@ -167,17 +167,17 @@
                         <span class="error" id="endErro"></span>
                     </div>
                     <div class="form-group">
-                        <label for="name">Senha:</label>
-                        <input type="password" id="password" placeholder="Sua senha:">
+                        <label for="password">Senha:</label>
+                        <input type="password" id="password" placeholder="Sua senha:" autocomplete="new-password">
                         <span class="error" id="passwordErro"></span>
                     </div>
                     <div class="form-group">
-                        <label for="name">Confirme senha:</label>
-                        <input type="password" id="confirm-password" placeholder="Confirme sua senha:">
+                        <label for="confirm-password">Confirme senha:</label>
+                        <input type="password" id="confirm-password" placeholder="Confirme sua senha:" autocomplete="new-password">
                         <span class="error" id="confirm-passwordErro"></span>
                     </div>
-                    <button type="submit" class="btn-sub">Cadastrar</button>
-                    <button type="reset" class="btn-res">Limpar</button>
+                    <button type="submit" id="btnSub">Cadastrar</button>
+                    <button type="reset" id="btnRes">Limpar</button>
                     
                     
                 </form>

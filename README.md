@@ -1,20 +1,22 @@
 # Academy Café - Projeto de Estágio
 
-Este projeto é uma recriação da interface de um e-commerce fictício de café, desenvolvida como parte do programa de estágio na **Premiersoft Academy**. O principal objetivo foi criar um layout responsivo utilizando apenas **HTML** e **CSS**, com ênfase no controle de colunas usando o **display flex** em vez de **CSS Grid**. A responsividade do layout ajusta o número de colunas conforme o tamanho da tela, criando uma experiência de usuário otimizada em dispositivos móveis, tablets e desktops.
+Este projeto é uma criação da interface de um e-commerce fictício de café, desenvolvida como parte do programa de estágio na **Premiersoft Academy**. O principal objetivo foi criar um layout responsivo utilizando apenas **HTML**, **CSS** e **JS**, com ênfase no controle de colunas usando o **display flex** em vez de **CSS Grid**. A responsividade do layout ajusta o número de colunas conforme o tamanho da tela, criando uma experiência de usuário otimizada em dispositivos móveis, tablets e desktops.
 
 ## Tecnologias Utilizadas
 
 - **HTML5**
 - **CSS3**
-- **Flexbox** (para layout responsivo)
+- **JS** 
 
 ## Objetivos do Projeto
 
 - Criar uma interface de e-commerce responsiva, com visual e funcionalidades inspiradas em um site de vendas de produtos relacionados a cafés.
-- Utilizar **CSS Flexbox** para organizar as colunas de produtos de maneira responsiva, sem a utilização de **CSS Grid**.
+- Utilizar **CSS Flexbox** para organizar as colunas de produtos de maneira responsiva, **sem** a utilização de CSS **Grid**.
 - Desenvolver habilidades em criação de layouts flexíveis e responsivos, utilizando **media queries** para adaptação a diferentes tamanhos de tela.
-- Melhorar o entendimento de como criar layouts limpos e eficientes utilizando apenas **HTML** e **CSS**.
+- Melhorar o entendimento de como criar layouts limpos e eficientes utilizando apenas **HTML**, **CSS** e **JS**.
 - O layout **NÃO** tem como objetivo seguir os padrões UX/UI, porém, ao longo do tempo posso ir melhorando o visual.
+- Criar fomulário com validação **em tempo real**.
+- Armazenar dados colhidos no formulário em **localStorage**.
 
 ## Como Rodar o Projeto
 
